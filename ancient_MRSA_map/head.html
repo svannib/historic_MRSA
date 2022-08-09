@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+	<style type="text/css">
+	.createdby {
+                font-size:xx-small; 
+		font-weight:normal;
+		color:gray;
+                text-align:right; 
+                overflow: auto;
+                width=100%;
+	}
+	.createdby a {
+                font-size:xx-small; 
+		font-weight:normal;
+		text-decoration:underlined;
+		color:gray;
+                text-align:right; 
+	}
+	</style>
+	<script type="text/javascript">
+                var colorLegendWindow;
+
+		function openLegendWindow(){
+                        var h = 300;
+                        var w = 300;
+                        var y = window.top.outerHeight + window.top.screenY -  h;
+                        var x = window.top.screenX ;
+                        var text = "<html><head><title>Color Legend: Swiss_MRSA_History_VB</title><style type='text/css'>html,body {font-family:\"Segoe UI\",Verdana,Tahoma,Arial,Helvetica,sans-serif;}</style></head><body><b id='heading'>Color Legend</b><br /><img src='colors.png'/></body></html>";
+		        var win = window.open('', 'colorLegend', 'width='+w+',height='+h+',top='+y+',left='+x+',menubar=no,status=no,toolbar=no,scrollbars=yes,copyhistory=no,location=no');
+		        if (win && !win.document.getElementById("heading")){
+				win.document.open();
+				win.document.write(text);
+				win.document.close();
+			}
+                        win.focus();
+		}
+
+                function changeMap(combo){
+               		var selValue = combo.value;
+    			if (selValue=="google") {
+      				window.open("googlemaps.html", "mapFrame");
+    			}
+    			if (selValue=="osm") {
+      				window.open("osm.html", "mapFrame");
+    			}
+		}
+	</script>
+</head>
+<body>
+
+	<div style="padding:5px">
+		<table>
+			<tr>
+				<td>
+					<b>Swiss_MRSA_History_VB</b>
+				</td>
+                  <td style="padding-left:1em;">
+				  <select id="mapSelect" onchange="javascript:changeMap(this)">
+				    <option value="osm">Show in OpenStreetMap</option>
+				    <option value="google">Show in Google Maps</option>
+				  </select>
+                  </td>
+
+				
+                  <td style="padding-left:1em; white-space:nowrap;">
+				    <button type="button" onclick="javascript:openLegendWindow()">Show Color Legend</button>
+				  </td>
+				
+
+				<td style="padding-left:3em;" align="right" class="createdby">
+				  <span class="createdby">  
+				    created with 
+                                    <a href="https://www.ridom.de/seqsphere" target="_blank">Ridom SeqSphere</a><sup>+</sup>
+                                    &nbsp;
+				  </span>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
