@@ -1,0 +1,8 @@
+,Antibiotic,Genes,resistant phenotypes,sensitive phenotypes,sensitivity [%],specificity [%]
+ciprofloxacin,ciprofloxacin,"gyrA, grlA",1,450,0*,98
+clindamycin,clindamycin,"ermA, ermC",440,11,98.4,27.3
+erythromycin,erythromycin,"ermA, ermC",444,7,98.4,42.9
+gentamicin,gentamicin,aac(6)-aph(2'),55,396,89.1,98.2
+meropenem,meropenem,mecA,451,0,99.1,
+penicillin,penicillin,blaZ,450,1,95.8,0*
+tetracycline,tetracycline,"tetM, tetK",450,1,100,100
